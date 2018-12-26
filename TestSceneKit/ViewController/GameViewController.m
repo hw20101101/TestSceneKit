@@ -67,7 +67,13 @@
     };
 
     optionalBar.productBtnAction = ^{
-
+        //创建球体
+        SCNSphere *sphere = [SCNSphere sphereWithRadius:2.0];
+        sphere.firstMaterial.diffuse.contents = @"a3_earth.png";
+        SCNNode *sphereNode = [SCNNode node];
+        sphereNode.geometry = sphere;
+        sphereNode.position = SCNVector3Make(-5, 0, 0);
+        [weakSelf.scnView.scene.rootNode addChildNode:sphereNode];
     };
 }
 
@@ -94,20 +100,12 @@
 - (void)createGeometry{
 
     //创建正方体
-    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+    SCNBox *box = [SCNBox boxWithWidth:3 height:3 length:3 chamferRadius:0];
     box.firstMaterial.diffuse.contents = @"a0_demo.png";//注意图片路径
     SCNNode *boxNode = [SCNNode node];
     boxNode.geometry = box;
-    boxNode.position = SCNVector3Make(0, 0, 0);
+    boxNode.position = SCNVector3Make(5, 0, 0);
     [self.scnView.scene.rootNode addChildNode:boxNode];
-
-    //创建球体
-    SCNSphere *sphere = [SCNSphere sphereWithRadius:10.1];
-    sphere.firstMaterial.diffuse.contents = @"a3_earth.png";
-    SCNNode *sphereNode = [SCNNode node];
-    sphereNode.geometry = sphere;
-    sphereNode.position = SCNVector3Make(0, 0, -10);
-    [self.scnView.scene.rootNode addChildNode:sphereNode];
 }
 
 - (void)createScene{
