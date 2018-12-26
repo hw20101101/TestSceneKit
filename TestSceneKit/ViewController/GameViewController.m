@@ -48,10 +48,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.previousMoveLoc = CGPointZero;
     [self createSenceView];
     [self createScene];
-    //[self createBox];
+    [self createGeometry];
 }
 
 - (void)createSenceView{
@@ -60,7 +59,7 @@
     self.scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.scnView];
 
-    //开启默认光源
+    //设置默认光源
     self.scnView.autoenablesDefaultLighting = NO;
     // allows the user to manipulate the camera
     self.scnView.allowsCameraControl = NO;
@@ -72,10 +71,9 @@
     //添加手势
     [self.scnView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)]];
     [self.scnView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)]];
-    //[self.scnView addGestureRecognizer:[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationGesture:)]];
 }
 
-- (void)createBox{
+- (void)createGeometry{
 
     //创建正方体
     SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
@@ -97,7 +95,7 @@
 - (void)createScene{
 
     // create a new scene
-    self.scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
+    self.scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];//注意文件路径
     // set the scene to the view
     self.scnView.scene = self.scene;
 
@@ -109,57 +107,7 @@
     // place the camera
     self.cameraNode.position = SCNVector3Make(0, 0, 35);
     [self.scene.rootNode addChildNode:self.cameraNode];
-
-    /*
-    // create and add a light to the scene
-    SCNNode *lightNode = [SCNNode node];
-    lightNode.light = [SCNLight light];
-    lightNode.light.type = SCNLightTypeOmni;
-    lightNode.position = SCNVector3Make(10, 10, 10);
-    [self.scene.rootNode addChildNode:lightNode];
-
-    // create and add an ambient light to the scene
-    SCNNode *ambientLightNode = [SCNNode node];
-    ambientLightNode.light = [SCNLight light];
-    ambientLightNode.light.type = SCNLightTypeDirectional;
-    ambientLightNode.light.color = [UIColor greenColor];
-    [self.scene.rootNode addChildNode:ambientLightNode];
-
-    SCNNode *camera = [self.scene.rootNode childNodeWithName:@"camera" recursively:YES];
-    NSLog(@"-->> camera:%@", camera);
-
-    // retrieve the ship node 获得这个场景中飞机这个节点
-    SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
-
-    // animate the 3d object
-    [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
-    */
 }
-
-#pragma mark - 单指平移
-//- (void)panGesture:(UIPanGestureRecognizer *)pan {
-//
-//    CGPoint delta;
-//    CGPoint location = [pan locationInView:self.scnView];
-//    NSArray *hitResults = [self.scnView hitTest:location options:nil];
-//
-//    // 保证至少有一个节点被触发
-//    if([hitResults count] > 0){
-//        // 检索触发的第一个对象
-//        SCNHitTestResult *result = [hitResults objectAtIndex:0];
-//        SCNNode *geometryNode = result.node;
-//
-//        if (pan.state == UIGestureRecognizerStateChanged) {
-//            delta = CGPointMake(2 * (location.x - self.previousMoveLoc.x), 2 * (location.y - self.previousMoveLoc.y));
-//            CGFloat x = geometryNode.position.x + (CGFloat)(delta.x * 0.02);
-//            CGFloat y = geometryNode.position.y + (CGFloat)(-delta.y * (0.02));
-//            geometryNode.position = SCNVector3Make(x, y, 0);
-//            self.previousMoveLoc = location;
-//        }
-//
-//        self.previousMoveLoc = location;
-//    }
-//}
 
 #pragma mark - 1个手指旋转，2个手指移动
 - (void)panGesture:(UIPanGestureRecognizer *)pan {
@@ -238,91 +186,6 @@
         CGFloat pinchScaleZ =  (CGFloat)(pinch.scale) * geometryNode.scale.z;
         geometryNode.scale = SCNVector3Make(pinchScaleX, pinchScaleY, pinchScaleZ);
         pinch.scale = 1;
-    }
-}
-
-#pragma mark - 旋转手势
-- (void)rotationGesture:(UIRotationGestureRecognizer *)rotation {
-
-    /*
-    // 检查触发了哪些节点
-    CGPoint p = [rotation locationInView:self.scnView];
-    NSArray *hitResults = [self.scnView hitTest:p options:nil];
-
-    // 保证至少有一个节点被触发
-    if([hitResults count] > 0){
-        // 检索触发的第一个对象
-        SCNHitTestResult *result = [hitResults objectAtIndex:0];
-        SCNNode *geometryNode = result.node;
-        [self rotate:rotation geometryNode:geometryNode];
-    }
-    */
-}
-
-//单指 翻转、旋转，方式一
-//- (void)rotate:(UIPanGestureRecognizer *)pan geometryNode:(SCNNode *)geometryNode{
-//
-//    CGPoint translation = [pan translationInView:pan.view];
-//    CGFloat newAngleX = (CGFloat)(translation.y)*(CGFloat)(M_PI)/180.0;
-//    newAngleX += self.currentAngleX;
-//    CGFloat newAngleY = (CGFloat)(translation.x)*(CGFloat)(M_PI)/180.0;
-//    newAngleY += self.currentAngleY;
-//    geometryNode.eulerAngles = SCNVector3Make(newAngleX, newAngleY, 0);
-//
-//    if (pan.state == UIGestureRecognizerStateEnded) {
-//        self.currentAngleX = newAngleX;
-//        self.currentAngleY = newAngleY;
-//    }
-//}
-
-//单指 翻转、旋转，方式二
-//- (void)rotate2:(UIPanGestureRecognizer *)pan geometryNode:(SCNNode *)geometryNode{
-//
-//    CGPoint translation = [pan translationInView:pan.view];
-//    CGFloat x = (CGFloat)(translation.x);
-//    CGFloat y = (CGFloat)(-translation.y);
-//
-//    CGFloat anglePan = sqrt(pow(x,2) + pow(y,2)) * (CGFloat)(M_PI)/180.0;
-//    SCNVector4 rotationVector = SCNVector4Make(-y, x, 0, anglePan);
-//    geometryNode.rotation = rotationVector;
-//
-//    if (pan.state == UIGestureRecognizerStateEnded) {
-//        SCNMatrix4 currentPivot = geometryNode.pivot;
-//        SCNMatrix4 changePivot = SCNMatrix4Invert(geometryNode.transform);
-//        geometryNode.pivot = SCNMatrix4Mult(changePivot, currentPivot);
-//        geometryNode.transform = SCNMatrix4Identity;
-//    }
-//}
-
-#pragma mark - 获取被点击的节点
-- (void) handleTap:(UIGestureRecognizer*)gestureRecognize
-{
-    // 检查点击了哪些节点
-    CGPoint p = [gestureRecognize locationInView:self.scnView];
-    NSArray *hitResults = [self.scnView hitTest:p options:nil];
-    
-    // 保证至少有一个节点被点击
-    if([hitResults count] > 0){
-        // 检索单击的第一个对象
-        SCNHitTestResult *result = [hitResults objectAtIndex:0];
-        // 获取节点材质
-        SCNMaterial *material = result.node.geometry.firstMaterial;
-        // 使节点高亮
-        [SCNTransaction begin];
-        [SCNTransaction setAnimationDuration:0.5];
-        NSLog(@"-->> result.node:%@", result.node);
-
-        // on completion - unhighlight
-        [SCNTransaction setCompletionBlock:^{
-            [SCNTransaction begin];
-            [SCNTransaction setAnimationDuration:0.5];
-            material.emission.contents = [UIColor blackColor];
-            //material.emission.contentsTransform
-            [SCNTransaction commit];
-        }];
-        
-        material.emission.contents = [UIColor redColor];
-        [SCNTransaction commit];
     }
 }
 
