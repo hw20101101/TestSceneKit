@@ -13,19 +13,16 @@
 		C748486721C9035B008F0E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C748486621C9035B008F0E20 /* Assets.xcassets */; };
 		C748486A21C9035B008F0E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C748486821C9035B008F0E20 /* LaunchScreen.storyboard */; };
 		C748486D21C9035B008F0E20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C748486C21C9035B008F0E20 /* main.m */; };
+		C74E4C1021D358CB00BB4945 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0021D358CB00BB4945 /* TestViewController.m */; };
+		C74E4C1121D358CB00BB4945 /* ConstraintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0221D358CB00BB4945 /* ConstraintViewController.m */; };
+		C74E4C1221D358CB00BB4945 /* ChangeSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0321D358CB00BB4945 /* ChangeSceneViewController.m */; };
+		C74E4C1321D358CB00BB4945 /* ChangeCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0421D358CB00BB4945 /* ChangeCameraViewController.m */; };
+		C74E4C1421D358CB00BB4945 /* ForceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0521D358CB00BB4945 /* ForceViewController.m */; };
+		C74E4C1521D358CB00BB4945 /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0721D358CB00BB4945 /* LightViewController.m */; };
+		C74E4C1621D358CB00BB4945 /* GeometryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0821D358CB00BB4945 /* GeometryViewController.m */; };
+		C74E4C1721D358CB00BB4945 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0C21D358CB00BB4945 /* ActionViewController.m */; };
 		C797208321CA620C004365BD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C797208221CA620C004365BD /* RootViewController.m */; };
-		C797208621CA675C004365BD /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C797208421CA675C004365BD /* spark.png */; };
-		C797208721CA675C004365BD /* SceneKitParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = C797208521CA675C004365BD /* SceneKitParticleSystem.scnp */; };
-		C7E17C0721CB39F1009126A4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BF721CB39F1009126A4 /* TestViewController.m */; };
-		C7E17C0821CB39F1009126A4 /* ConstraintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BF921CB39F1009126A4 /* ConstraintViewController.m */; };
 		C7E17C0921CB39F1009126A4 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFA21CB39F1009126A4 /* GameViewController.m */; };
-		C7E17C0A21CB39F1009126A4 /* ChangeCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFB21CB39F1009126A4 /* ChangeCameraViewController.m */; };
-		C7E17C0B21CB39F1009126A4 /* ForceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFC21CB39F1009126A4 /* ForceViewController.m */; };
-		C7E17C0C21CB39F1009126A4 /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFE21CB39F1009126A4 /* LightViewController.m */; };
-		C7E17C0D21CB39F1009126A4 /* GeometryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFF21CB39F1009126A4 /* GeometryViewController.m */; };
-		C7E17C0E21CB39F1009126A4 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17C0421CB39F1009126A4 /* ActionViewController.m */; };
-		C7E17C1121CB3A74009126A4 /* ChangeSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17C1021CB3A74009126A4 /* ChangeSceneViewController.m */; };
-		C7E17C1721CB7A2F009126A4 /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = C7E17C1621CB7A2F009126A4 /* SceneKit Scene.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,29 +35,26 @@
 		C748486921C9035B008F0E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C748486B21C9035B008F0E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C748486C21C9035B008F0E20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C74E4C0021D358CB00BB4945 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		C74E4C0121D358CB00BB4945 /* GeometryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryViewController.h; sourceTree = "<group>"; };
+		C74E4C0221D358CB00BB4945 /* ConstraintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintViewController.m; sourceTree = "<group>"; };
+		C74E4C0321D358CB00BB4945 /* ChangeSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeSceneViewController.m; sourceTree = "<group>"; };
+		C74E4C0421D358CB00BB4945 /* ChangeCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeCameraViewController.m; sourceTree = "<group>"; };
+		C74E4C0521D358CB00BB4945 /* ForceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceViewController.m; sourceTree = "<group>"; };
+		C74E4C0621D358CB00BB4945 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
+		C74E4C0721D358CB00BB4945 /* LightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightViewController.m; sourceTree = "<group>"; };
+		C74E4C0821D358CB00BB4945 /* GeometryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometryViewController.m; sourceTree = "<group>"; };
+		C74E4C0921D358CB00BB4945 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		C74E4C0A21D358CB00BB4945 /* ConstraintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstraintViewController.h; sourceTree = "<group>"; };
+		C74E4C0B21D358CB00BB4945 /* LightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightViewController.h; sourceTree = "<group>"; };
+		C74E4C0C21D358CB00BB4945 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
+		C74E4C0D21D358CB00BB4945 /* ForceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceViewController.h; sourceTree = "<group>"; };
+		C74E4C0E21D358CB00BB4945 /* ChangeCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCameraViewController.h; sourceTree = "<group>"; };
+		C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSceneViewController.h; sourceTree = "<group>"; };
 		C797208121CA620C004365BD /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C797208221CA620C004365BD /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		C797208421CA675C004365BD /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		C797208521CA675C004365BD /* SceneKitParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = SceneKitParticleSystem.scnp; sourceTree = "<group>"; };
-		C7E17BF721CB39F1009126A4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		C7E17BF821CB39F1009126A4 /* GeometryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryViewController.h; sourceTree = "<group>"; };
-		C7E17BF921CB39F1009126A4 /* ConstraintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstraintViewController.m; sourceTree = "<group>"; };
 		C7E17BFA21CB39F1009126A4 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		C7E17BFB21CB39F1009126A4 /* ChangeCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeCameraViewController.m; sourceTree = "<group>"; };
-		C7E17BFC21CB39F1009126A4 /* ForceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceViewController.m; sourceTree = "<group>"; };
-		C7E17BFD21CB39F1009126A4 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
-		C7E17BFE21CB39F1009126A4 /* LightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightViewController.m; sourceTree = "<group>"; };
-		C7E17BFF21CB39F1009126A4 /* GeometryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeometryViewController.m; sourceTree = "<group>"; };
-		C7E17C0021CB39F1009126A4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		C7E17C0121CB39F1009126A4 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		C7E17C0221CB39F1009126A4 /* ConstraintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstraintViewController.h; sourceTree = "<group>"; };
-		C7E17C0321CB39F1009126A4 /* LightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightViewController.h; sourceTree = "<group>"; };
-		C7E17C0421CB39F1009126A4 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
-		C7E17C0521CB39F1009126A4 /* ForceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceViewController.h; sourceTree = "<group>"; };
-		C7E17C0621CB39F1009126A4 /* ChangeCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCameraViewController.h; sourceTree = "<group>"; };
-		C7E17C0F21CB3A74009126A4 /* ChangeSceneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeSceneViewController.h; sourceTree = "<group>"; };
-		C7E17C1021CB3A74009126A4 /* ChangeSceneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeSceneViewController.m; sourceTree = "<group>"; };
-		C7E17C1621CB7A2F009126A4 /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +91,6 @@
 				C748485C21C9034C008F0E20 /* AppDelegate.m */,
 				C797208121CA620C004365BD /* RootViewController.h */,
 				C797208221CA620C004365BD /* RootViewController.m */,
-				C7E17C1621CB7A2F009126A4 /* SceneKit Scene.scn */,
 				C7E17BF621CB39F1009126A4 /* ViewController */,
 				C748485E21C9034C008F0E20 /* art.scnassets */,
 				C748486321C9034C008F0E20 /* Main.storyboard */,
@@ -105,33 +98,39 @@
 				C748486821C9035B008F0E20 /* LaunchScreen.storyboard */,
 				C748486B21C9035B008F0E20 /* Info.plist */,
 				C748486C21C9035B008F0E20 /* main.m */,
-				C797208421CA675C004365BD /* spark.png */,
-				C797208521CA675C004365BD /* SceneKitParticleSystem.scnp */,
 			);
 			path = TestSceneKit;
+			sourceTree = "<group>";
+		};
+		C74E4BFF21D358CB00BB4945 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C74E4C0021D358CB00BB4945 /* TestViewController.m */,
+				C74E4C0121D358CB00BB4945 /* GeometryViewController.h */,
+				C74E4C0221D358CB00BB4945 /* ConstraintViewController.m */,
+				C74E4C0321D358CB00BB4945 /* ChangeSceneViewController.m */,
+				C74E4C0421D358CB00BB4945 /* ChangeCameraViewController.m */,
+				C74E4C0521D358CB00BB4945 /* ForceViewController.m */,
+				C74E4C0621D358CB00BB4945 /* ActionViewController.h */,
+				C74E4C0721D358CB00BB4945 /* LightViewController.m */,
+				C74E4C0821D358CB00BB4945 /* GeometryViewController.m */,
+				C74E4C0921D358CB00BB4945 /* TestViewController.h */,
+				C74E4C0A21D358CB00BB4945 /* ConstraintViewController.h */,
+				C74E4C0B21D358CB00BB4945 /* LightViewController.h */,
+				C74E4C0C21D358CB00BB4945 /* ActionViewController.m */,
+				C74E4C0D21D358CB00BB4945 /* ForceViewController.h */,
+				C74E4C0E21D358CB00BB4945 /* ChangeCameraViewController.h */,
+				C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		C7E17BF621CB39F1009126A4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C7E17C0021CB39F1009126A4 /* TestViewController.h */,
-				C7E17BF721CB39F1009126A4 /* TestViewController.m */,
+				C74E4BFF21D358CB00BB4945 /* Other */,
 				C7E17C0121CB39F1009126A4 /* GameViewController.h */,
 				C7E17BFA21CB39F1009126A4 /* GameViewController.m */,
-				C7E17C0221CB39F1009126A4 /* ConstraintViewController.h */,
-				C7E17BF921CB39F1009126A4 /* ConstraintViewController.m */,
-				C7E17C0621CB39F1009126A4 /* ChangeCameraViewController.h */,
-				C7E17BFB21CB39F1009126A4 /* ChangeCameraViewController.m */,
-				C7E17C0521CB39F1009126A4 /* ForceViewController.h */,
-				C7E17BFC21CB39F1009126A4 /* ForceViewController.m */,
-				C7E17C0321CB39F1009126A4 /* LightViewController.h */,
-				C7E17BFE21CB39F1009126A4 /* LightViewController.m */,
-				C7E17BF821CB39F1009126A4 /* GeometryViewController.h */,
-				C7E17BFF21CB39F1009126A4 /* GeometryViewController.m */,
-				C7E17BFD21CB39F1009126A4 /* ActionViewController.h */,
-				C7E17C0421CB39F1009126A4 /* ActionViewController.m */,
-				C7E17C0F21CB3A74009126A4 /* ChangeSceneViewController.h */,
-				C7E17C1021CB3A74009126A4 /* ChangeSceneViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -193,11 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C797208621CA675C004365BD /* spark.png in Resources */,
 				C748485F21C9034C008F0E20 /* art.scnassets in Resources */,
-				C797208721CA675C004365BD /* SceneKitParticleSystem.scnp in Resources */,
 				C748486A21C9035B008F0E20 /* LaunchScreen.storyboard in Resources */,
-				C7E17C1721CB7A2F009126A4 /* SceneKit Scene.scn in Resources */,
 				C748486721C9035B008F0E20 /* Assets.xcassets in Resources */,
 				C748486521C9034C008F0E20 /* Main.storyboard in Resources */,
 			);
@@ -211,17 +207,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C748486D21C9035B008F0E20 /* main.m in Sources */,
+				C74E4C1521D358CB00BB4945 /* LightViewController.m in Sources */,
+				C74E4C1221D358CB00BB4945 /* ChangeSceneViewController.m in Sources */,
+				C74E4C1121D358CB00BB4945 /* ConstraintViewController.m in Sources */,
 				C797208321CA620C004365BD /* RootViewController.m in Sources */,
-				C7E17C0821CB39F1009126A4 /* ConstraintViewController.m in Sources */,
-				C7E17C0721CB39F1009126A4 /* TestViewController.m in Sources */,
-				C7E17C0D21CB39F1009126A4 /* GeometryViewController.m in Sources */,
-				C7E17C0E21CB39F1009126A4 /* ActionViewController.m in Sources */,
 				C7E17C0921CB39F1009126A4 /* GameViewController.m in Sources */,
-				C7E17C0C21CB39F1009126A4 /* LightViewController.m in Sources */,
-				C7E17C0A21CB39F1009126A4 /* ChangeCameraViewController.m in Sources */,
-				C7E17C1121CB3A74009126A4 /* ChangeSceneViewController.m in Sources */,
-				C7E17C0B21CB39F1009126A4 /* ForceViewController.m in Sources */,
+				C74E4C1321D358CB00BB4945 /* ChangeCameraViewController.m in Sources */,
+				C74E4C1421D358CB00BB4945 /* ForceViewController.m in Sources */,
+				C74E4C1621D358CB00BB4945 /* GeometryViewController.m in Sources */,
 				C748485D21C9034C008F0E20 /* AppDelegate.m in Sources */,
+				C74E4C1721D358CB00BB4945 /* ActionViewController.m in Sources */,
+				C74E4C1021D358CB00BB4945 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
