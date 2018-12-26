@@ -111,22 +111,22 @@
 		C74E4BFF21D358CB00BB4945 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C74E4C0921D358CB00BB4945 /* TestViewController.h */,
 				C74E4C0021D358CB00BB4945 /* TestViewController.m */,
 				C74E4C0121D358CB00BB4945 /* GeometryViewController.h */,
-				C74E4C0221D358CB00BB4945 /* ConstraintViewController.m */,
+				C74E4C0821D358CB00BB4945 /* GeometryViewController.m */,
 				C74E4C0321D358CB00BB4945 /* ChangeSceneViewController.m */,
+				C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */,
+				C74E4C0E21D358CB00BB4945 /* ChangeCameraViewController.h */,
 				C74E4C0421D358CB00BB4945 /* ChangeCameraViewController.m */,
+				C74E4C0D21D358CB00BB4945 /* ForceViewController.h */,
 				C74E4C0521D358CB00BB4945 /* ForceViewController.m */,
 				C74E4C0621D358CB00BB4945 /* ActionViewController.h */,
-				C74E4C0721D358CB00BB4945 /* LightViewController.m */,
-				C74E4C0821D358CB00BB4945 /* GeometryViewController.m */,
-				C74E4C0921D358CB00BB4945 /* TestViewController.h */,
-				C74E4C0A21D358CB00BB4945 /* ConstraintViewController.h */,
-				C74E4C0B21D358CB00BB4945 /* LightViewController.h */,
 				C74E4C0C21D358CB00BB4945 /* ActionViewController.m */,
-				C74E4C0D21D358CB00BB4945 /* ForceViewController.h */,
-				C74E4C0E21D358CB00BB4945 /* ChangeCameraViewController.h */,
-				C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */,
+				C74E4C0A21D358CB00BB4945 /* ConstraintViewController.h */,
+				C74E4C0221D358CB00BB4945 /* ConstraintViewController.m */,
+				C74E4C0B21D358CB00BB4945 /* LightViewController.h */,
+				C74E4C0721D358CB00BB4945 /* LightViewController.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
