@@ -11,11 +11,6 @@
 
 #import "GameViewController.h"
 
-typedef enum : NSUInteger {
-    ZoomOut,
-    ZoomIn,
-} ScaleStatus;
-
 @interface GameViewController()
 
 @property (strong, nonatomic) SCNView *scnView;
@@ -26,26 +21,17 @@ typedef enum : NSUInteger {
 
 @property (strong, nonatomic) SCNNode *boxNode;
 
-@property (assign, nonatomic) CGFloat boxScale;
-
-@property (assign, nonatomic) int scaleValue;
-
-//@property (assign, nonatomic) ScaleStatus scaleStatus;
-
-@property (strong, nonatomic) NSMutableDictionary *scaleData;
 
 /**
- 放大的次数
+ 当前旋转的数据
  */
-@property (assign, nonatomic) int zoomInCount;
-
-/**
- 缩小的次数
- */
-@property (assign, nonatomic) int zoomOutCount;
-
 @property (assign, nonatomic) CGFloat currentAngleX;
 @property (assign, nonatomic) CGFloat currentAngleY;
+
+/**
+ 上一次平移的位置
+ */
+@property (assign, nonatomic) CGPoint previousLoc;
 
 @end
 
@@ -54,6 +40,7 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.previousLoc = CGPointZero;
     [self createSenceView];
     [self createScene];
     //[self createBox];
@@ -141,11 +128,58 @@ typedef enum : NSUInteger {
     */
 }
 
-#pragma mark - 平移手势（翻转、旋转）
+#pragma mark - 平移手势
 - (void)panGesture:(UIPanGestureRecognizer *)pan {
 
+    CGPoint delta;
+    CGPoint location = [pan locationInView:self.scnView];
+    NSArray *hitResults = [self.scnView hitTest:location options:nil];
+
+    // 保证至少有一个节点被触发
+    if([hitResults count] > 0){
+        // 检索触发的第一个对象
+        SCNHitTestResult *result = [hitResults objectAtIndex:0];
+        SCNNode *geometryNode = result.node;
+
+        if (pan.state == UIGestureRecognizerStateChanged) {
+            delta = CGPointMake(2 * (location.x - self.previousLoc.x), 2 * (location.y - self.previousLoc.y));
+            CGFloat x = geometryNode.position.x + (CGFloat)(delta.x * 0.02);
+            CGFloat y = geometryNode.position.y + (CGFloat)(-delta.y * (0.02));
+            geometryNode.position = SCNVector3Make(x, y, 0);
+            self.previousLoc = location;
+        }
+
+        self.previousLoc = location;
+    }
+}
+
+#pragma mark - 缩放手势
+- (void)pinchGesture:(UIPinchGestureRecognizer *)pinch {
+
     // 检查触发了哪些节点
-    CGPoint p = [pan locationInView:self.scnView];
+    CGPoint p = [pinch locationInView:self.scnView];
+    NSArray *hitResults = [self.scnView hitTest:p options:nil];
+
+    // 保证至少有一个节点被触发
+    if([hitResults count] > 0 && pinch.state == UIGestureRecognizerStateChanged){
+        // 检索触发的第一个对象
+        SCNHitTestResult *result = [hitResults objectAtIndex:0];
+        SCNNode *geometryNode = result.node;
+
+        CGFloat pinchScaleX = (CGFloat)(pinch.scale) * geometryNode.scale.x;
+        CGFloat pinchScaleY =  (CGFloat)(pinch.scale) * geometryNode.scale.y;
+        CGFloat pinchScaleZ =  (CGFloat)(pinch.scale) * geometryNode.scale.z;
+        geometryNode.scale = SCNVector3Make(pinchScaleX, pinchScaleY, pinchScaleZ);
+        pinch.scale = 1;
+    }
+}
+
+#pragma mark - 旋转手势
+- (void)rotationGesture:(UIRotationGestureRecognizer *)rotation {
+
+    /* TODO 
+    // 检查触发了哪些节点
+    CGPoint p = [rotation locationInView:self.scnView];
     NSArray *hitResults = [self.scnView hitTest:p options:nil];
 
     // 保证至少有一个节点被触发
@@ -153,8 +187,9 @@ typedef enum : NSUInteger {
         // 检索触发的第一个对象
         SCNHitTestResult *result = [hitResults objectAtIndex:0];
         SCNNode *geometryNode = result.node;
-        [self rotate:pan geometryNode:geometryNode];
+        [self rotate:rotation geometryNode:geometryNode];
     }
+    */
 }
 
 //单指 翻转、旋转，方式一
@@ -189,53 +224,6 @@ typedef enum : NSUInteger {
         SCNMatrix4 changePivot = SCNMatrix4Invert(geometryNode.transform);
         geometryNode.pivot = SCNMatrix4Mult(changePivot, currentPivot);
         geometryNode.transform = SCNMatrix4Identity;
-    }
-}
-
-#pragma mark - 缩放手势
-- (void)pinchGesture:(UIPinchGestureRecognizer *)pinch {
-
-    // 检查触发了哪些节点
-    CGPoint p = [pinch locationInView:self.scnView];
-    NSArray *hitResults = [self.scnView hitTest:p options:nil];
-
-    // 保证至少有一个节点被触发
-    if([hitResults count] > 0 && pinch.state == UIGestureRecognizerStateChanged){
-        // 检索触发的第一个对象
-        SCNHitTestResult *result = [hitResults objectAtIndex:0];
-        SCNNode *geometryNode = result.node;
-
-        CGFloat pinchScaleX = (CGFloat)(pinch.scale) * geometryNode.scale.x;
-        CGFloat pinchScaleY =  (CGFloat)(pinch.scale) * geometryNode.scale.y;
-        CGFloat pinchScaleZ =  (CGFloat)(pinch.scale) * geometryNode.scale.z;
-        geometryNode.scale = SCNVector3Make(pinchScaleX, pinchScaleY, pinchScaleZ);
-        pinch.scale = 1;
-    }
-}
-
-#pragma mark - 旋转手势
-- (void)rotationGesture:(UIRotationGestureRecognizer *)rotation {
-
-    NSLog(@"-->> rotation:%f - velocity:%f", rotation.rotation, rotation.velocity);
-
-    // 检查点击了哪些节点
-    CGPoint p = [rotation locationInView:self.scnView];
-    NSArray *hitResults = [self.scnView hitTest:p options:nil];
-
-    // 保证至少有一个节点被点击
-    if([hitResults count] > 0 && rotation.state == UIGestureRecognizerStateEnded){
-        // 检索单击的第一个对象
-        SCNHitTestResult *result = [hitResults objectAtIndex:0];
-        SCNNode *node = result.node;
-
-        [SCNTransaction begin];
-        [SCNTransaction setAnimationDuration:0.5];
-
-        //TODO ???
-        SCNAction *action = [SCNAction rotateByAngle:rotation.rotation aroundAxis:SCNVector3Make(0, rotation.velocity, 0) duration:0.5];
-        [node runAction:action];
-
-        [SCNTransaction commit];
     }
 }
 
