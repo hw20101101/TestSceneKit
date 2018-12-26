@@ -21,6 +21,8 @@
 		C74E4C1521D358CB00BB4945 /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0721D358CB00BB4945 /* LightViewController.m */; };
 		C74E4C1621D358CB00BB4945 /* GeometryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0821D358CB00BB4945 /* GeometryViewController.m */; };
 		C74E4C1721D358CB00BB4945 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C0C21D358CB00BB4945 /* ActionViewController.m */; };
+		C74E4C1B21D35FE900BB4945 /* OptionalBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E4C1A21D35FE900BB4945 /* OptionalBar.m */; };
+		C74E4C1D21D35FF500BB4945 /* OptionalBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74E4C1C21D35FF500BB4945 /* OptionalBar.xib */; };
 		C797208321CA620C004365BD /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C797208221CA620C004365BD /* RootViewController.m */; };
 		C7E17C0921CB39F1009126A4 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E17BFA21CB39F1009126A4 /* GameViewController.m */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,9 @@
 		C74E4C0D21D358CB00BB4945 /* ForceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceViewController.h; sourceTree = "<group>"; };
 		C74E4C0E21D358CB00BB4945 /* ChangeCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCameraViewController.h; sourceTree = "<group>"; };
 		C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeSceneViewController.h; sourceTree = "<group>"; };
+		C74E4C1921D35FE900BB4945 /* OptionalBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionalBar.h; sourceTree = "<group>"; };
+		C74E4C1A21D35FE900BB4945 /* OptionalBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionalBar.m; sourceTree = "<group>"; };
+		C74E4C1C21D35FF500BB4945 /* OptionalBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionalBar.xib; sourceTree = "<group>"; };
 		C797208121CA620C004365BD /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C797208221CA620C004365BD /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C7E17BFA21CB39F1009126A4 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
@@ -91,6 +96,7 @@
 				C748485C21C9034C008F0E20 /* AppDelegate.m */,
 				C797208121CA620C004365BD /* RootViewController.h */,
 				C797208221CA620C004365BD /* RootViewController.m */,
+				C74E4C1821D35F5900BB4945 /* View */,
 				C7E17BF621CB39F1009126A4 /* ViewController */,
 				C748485E21C9034C008F0E20 /* art.scnassets */,
 				C748486321C9034C008F0E20 /* Main.storyboard */,
@@ -123,6 +129,16 @@
 				C74E4C0F21D358CB00BB4945 /* ChangeSceneViewController.h */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		C74E4C1821D35F5900BB4945 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C74E4C1921D35FE900BB4945 /* OptionalBar.h */,
+				C74E4C1A21D35FE900BB4945 /* OptionalBar.m */,
+				C74E4C1C21D35FF500BB4945 /* OptionalBar.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C7E17BF621CB39F1009126A4 /* ViewController */ = {
@@ -193,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C748485F21C9034C008F0E20 /* art.scnassets in Resources */,
+				C74E4C1D21D35FF500BB4945 /* OptionalBar.xib in Resources */,
 				C748486A21C9035B008F0E20 /* LaunchScreen.storyboard in Resources */,
 				C748486721C9035B008F0E20 /* Assets.xcassets in Resources */,
 				C748486521C9034C008F0E20 /* Main.storyboard in Resources */,
@@ -209,6 +226,7 @@
 				C748486D21C9035B008F0E20 /* main.m in Sources */,
 				C74E4C1521D358CB00BB4945 /* LightViewController.m in Sources */,
 				C74E4C1221D358CB00BB4945 /* ChangeSceneViewController.m in Sources */,
+				C74E4C1B21D35FE900BB4945 /* OptionalBar.m in Sources */,
 				C74E4C1121D358CB00BB4945 /* ConstraintViewController.m in Sources */,
 				C797208321CA620C004365BD /* RootViewController.m in Sources */,
 				C7E17C0921CB39F1009126A4 /* GameViewController.m in Sources */,

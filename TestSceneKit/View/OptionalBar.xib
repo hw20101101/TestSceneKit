@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="4Rp-97-x1a" customClass="OptionalBar">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="31"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-VU-SS0">
+                    <rect key="frame" x="0.0" y="0.0" width="55" height="31"/>
+                    <color key="backgroundColor" red="1" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="PET-AJ-cq9"/>
+                        <constraint firstAttribute="height" constant="31" id="bdV-Tb-4ue"/>
+                    </constraints>
+                    <state key="normal" title="场景">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="senceBtnOnClick:" destination="4Rp-97-x1a" eventType="touchUpInside" id="47C-6R-V0n"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COw-f1-djB">
+                    <rect key="frame" x="55" y="0.0" width="55" height="31"/>
+                    <color key="backgroundColor" red="0.68235294120000001" green="0.4823529412" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="PBg-qO-lyg"/>
+                        <constraint firstAttribute="height" constant="31" id="cNJ-XM-uej"/>
+                    </constraints>
+                    <state key="normal" title="产品">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="productBtnOnClick:" destination="4Rp-97-x1a" eventType="touchUpInside" id="to0-4S-LXE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-ch-gz3">
+                    <rect key="frame" x="110" y="0.0" width="55" height="31"/>
+                    <color key="backgroundColor" red="1" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="6sK-Zd-xds"/>
+                        <constraint firstAttribute="width" constant="55" id="pQj-Hi-bY1"/>
+                    </constraints>
+                    <state key="normal" title="亮度">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="brightnessBtnOnClick:" destination="4Rp-97-x1a" eventType="touchUpInside" id="48v-yu-lNc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RS-gZ-n9j">
+                    <rect key="frame" x="165" y="0.0" width="55" height="31"/>
+                    <color key="backgroundColor" red="0.68235294120000001" green="0.4823529412" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="1d3-LN-CYa"/>
+                        <constraint firstAttribute="height" constant="31" id="OvH-uP-zwq"/>
+                    </constraints>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="saveBtnOnClick:" destination="4Rp-97-x1a" eventType="touchUpInside" id="fhV-Kx-hGq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.39678393404907975" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dmF-ch-gz3" firstAttribute="top" secondItem="duQ-xd-g30" secondAttribute="top" id="Hdo-Q4-tlf"/>
+                <constraint firstItem="rfm-VU-SS0" firstAttribute="leading" secondItem="duQ-xd-g30" secondAttribute="leading" id="Kcn-rG-ROV"/>
+                <constraint firstItem="rfm-VU-SS0" firstAttribute="top" secondItem="duQ-xd-g30" secondAttribute="top" id="YPd-W4-3LM"/>
+                <constraint firstItem="0RS-gZ-n9j" firstAttribute="top" secondItem="duQ-xd-g30" secondAttribute="top" id="aSN-ip-Vqc"/>
+                <constraint firstItem="0RS-gZ-n9j" firstAttribute="leading" secondItem="dmF-ch-gz3" secondAttribute="trailing" id="bpc-aE-qbc"/>
+                <constraint firstItem="dmF-ch-gz3" firstAttribute="leading" secondItem="COw-f1-djB" secondAttribute="trailing" id="dE6-cV-BJT"/>
+                <constraint firstItem="COw-f1-djB" firstAttribute="leading" secondItem="rfm-VU-SS0" secondAttribute="trailing" id="ozP-R5-a0m"/>
+                <constraint firstItem="COw-f1-djB" firstAttribute="top" secondItem="duQ-xd-g30" secondAttribute="top" id="w7p-3d-hry"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="duQ-xd-g30"/>
+            <point key="canvasLocation" x="-206.40000000000001" y="-280.20989505247377"/>
+        </view>
+    </objects>
+</document>

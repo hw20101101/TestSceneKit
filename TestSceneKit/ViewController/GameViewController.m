@@ -10,6 +10,7 @@
 #define kZoomDefaultValue 1.0
 
 #import "GameViewController.h"
+#import "OptionalBar.h"
 
 @interface GameViewController()
 
@@ -51,6 +52,23 @@
     [self createSenceView];
     [self createScene];
     [self createGeometry];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemAction)];
+}
+
+- (void)rightBarButtonItemAction{
+    OptionalBar *optionalBar = [[NSBundle mainBundle] loadNibNamed:@"OptionalBar" owner:nil options:nil][0];
+    optionalBar.frame = CGRectMake(20, 40, 220, 31);
+    [self.view addSubview:optionalBar];
+
+    __weak typeof(self)weakSelf = self;
+    optionalBar.senceBtnAction = ^{
+        //更换场景图片
+        weakSelf.scene.background.contents = @"lakes.png";
+    };
+
+    optionalBar.productBtnAction = ^{
+
+    };
 }
 
 - (void)createSenceView{
@@ -77,11 +95,11 @@
 
     //创建正方体
     SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-    box.firstMaterial.diffuse.contents = [UIImage imageNamed:@"a0_demo.png"];//注意图片路径，（此路径默认从 Assets.xcassets 中读取图片）
-    self.boxNode = [SCNNode node];
-    self.boxNode.geometry = box;
-    self.boxNode.position = SCNVector3Make(0, 0, 0);
-    [self.scnView.scene.rootNode addChildNode:self.boxNode];
+    box.firstMaterial.diffuse.contents = @"a0_demo.png";//注意图片路径
+    SCNNode *boxNode = [SCNNode node];
+    boxNode.geometry = box;
+    boxNode.position = SCNVector3Make(0, 0, 0);
+    [self.scnView.scene.rootNode addChildNode:boxNode];
 
     //创建球体
     SCNSphere *sphere = [SCNSphere sphereWithRadius:10.1];
@@ -96,10 +114,11 @@
 
     // create a new scene
     self.scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];//注意文件路径
+    self.scene.background.contents = @"sky.png";//也可以在.scn文件中设置
     // set the scene to the view
     self.scnView.scene = self.scene;
 
-    // create and add a camera to the scene
+    // 创建相机节点
     self.cameraNode = [SCNNode node];
     //给节点添加名字
     self.cameraNode.name = @"camera";
