@@ -56,7 +56,7 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     [self createSenceView];
     [self createScene];
-    [self createBox];
+    //[self createBox];
 }
 
 - (void)createSenceView{
@@ -74,13 +74,7 @@ typedef enum : NSUInteger {
     // configure the view
     self.scnView.backgroundColor = [UIColor whiteColor];
 
-    // add a tap gesture recognizer
-//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-//    NSMutableArray *gestureRecognizers = [NSMutableArray array];
-//    [gestureRecognizers addObject:tapGesture];
-//    [gestureRecognizers addObjectsFromArray:self.scnView.gestureRecognizers];
-//    self.scnView.gestureRecognizers = gestureRecognizers;
-
+    //添加手势
     [self.scnView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)]];
     [self.scnView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)]];
     [self.scnView addGestureRecognizer:[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationGesture:)]];
@@ -88,26 +82,27 @@ typedef enum : NSUInteger {
 
 - (void)createBox{
 
-//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-//    box.firstMaterial.diffuse.contents = [UIImage imageNamed:@"a0_demo.png"];//注意图片路径，（此路径默认从 Assets.xcassets 中读取图片）
-//    self.boxNode = [SCNNode node];
-//    self.boxNode.geometry = box;
-//    self.boxNode.position = SCNVector3Make(0, 0, 0);
-//    [self.scnView.scene.rootNode addChildNode:self.boxNode];
+    //创建正方体
+    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+    box.firstMaterial.diffuse.contents = [UIImage imageNamed:@"a0_demo.png"];//注意图片路径，（此路径默认从 Assets.xcassets 中读取图片）
+    self.boxNode = [SCNNode node];
+    self.boxNode.geometry = box;
+    self.boxNode.position = SCNVector3Make(0, 0, 0);
+    [self.scnView.scene.rootNode addChildNode:self.boxNode];
 
     //创建球体
-//    SCNSphere *sphere = [SCNSphere sphereWithRadius:10.1];
-//    sphere.firstMaterial.diffuse.contents = @"a3_earth.png";
-//    SCNNode *sphereNode = [SCNNode node];
-//    sphereNode.geometry = sphere;
-//    sphereNode.position = SCNVector3Make(0, 0, -10);
-//    [self.scnView.scene.rootNode addChildNode:sphereNode];
+    SCNSphere *sphere = [SCNSphere sphereWithRadius:10.1];
+    sphere.firstMaterial.diffuse.contents = @"a3_earth.png";
+    SCNNode *sphereNode = [SCNNode node];
+    sphereNode.geometry = sphere;
+    sphereNode.position = SCNVector3Make(0, 0, -10);
+    [self.scnView.scene.rootNode addChildNode:sphereNode];
 }
 
 - (void)createScene{
 
     // create a new scene
-    self.scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];//Named:@"art.scnassets/ship.scn"
+    self.scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
     // set the scene to the view
     self.scnView.scene = self.scene;
 
@@ -118,32 +113,32 @@ typedef enum : NSUInteger {
     self.cameraNode.camera = [SCNCamera camera];
     // place the camera
     self.cameraNode.position = SCNVector3Make(0, 0, 35);
-//    cameraNode.camera.zFar = 10000;
     [self.scene.rootNode addChildNode:self.cameraNode];
 
+    /*
     // create and add a light to the scene
-//    SCNNode *lightNode = [SCNNode node];
-//    lightNode.light = [SCNLight light];
-////    lightNode.light.zFar = 500;
-//    lightNode.light.type = SCNLightTypeOmni;
-//    lightNode.position = SCNVector3Make(10, 10, 10);
-//    [self.scene.rootNode addChildNode:lightNode];
+    SCNNode *lightNode = [SCNNode node];
+    lightNode.light = [SCNLight light];
+    lightNode.light.type = SCNLightTypeOmni;
+    lightNode.position = SCNVector3Make(10, 10, 10);
+    [self.scene.rootNode addChildNode:lightNode];
 
     // create and add an ambient light to the scene
-//    SCNNode *ambientLightNode = [SCNNode node];
-//    ambientLightNode.light = [SCNLight light];
-//    ambientLightNode.light.type = SCNLightTypeDirectional;
-//    ambientLightNode.light.color = [UIColor greenColor];
-//    [self.scene.rootNode addChildNode:ambientLightNode];
+    SCNNode *ambientLightNode = [SCNNode node];
+    ambientLightNode.light = [SCNLight light];
+    ambientLightNode.light.type = SCNLightTypeDirectional;
+    ambientLightNode.light.color = [UIColor greenColor];
+    [self.scene.rootNode addChildNode:ambientLightNode];
 
-//    SCNNode *camera = [self.scene.rootNode childNodeWithName:@"camera" recursively:YES];
-//    NSLog(@"-->> camera:%@", camera);
+    SCNNode *camera = [self.scene.rootNode childNodeWithName:@"camera" recursively:YES];
+    NSLog(@"-->> camera:%@", camera);
 
     // retrieve the ship node 获得这个场景中飞机这个节点
-    //    SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
-    //
-    //    // animate the 3d object
-    //    [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
+    SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
+
+    // animate the 3d object
+    [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
+    */
 }
 
 #pragma mark - 平移手势（翻转、旋转）
@@ -158,35 +153,42 @@ typedef enum : NSUInteger {
         // 检索触发的第一个对象
         SCNHitTestResult *result = [hitResults objectAtIndex:0];
         SCNNode *geometryNode = result.node;
+        [self rotate:pan geometryNode:geometryNode];
+    }
+}
 
-//        CGPoint translation = [pan translationInView:pan.view];
-//        CGFloat newAngleX = (CGFloat)(translation.y)*(CGFloat)(M_PI)/180.0;
-//        newAngleX += self.currentAngleX;
-//        CGFloat newAngleY = (CGFloat)(translation.x)*(CGFloat)(M_PI)/180.0;
-//        newAngleY += self.currentAngleY;
-//        node.eulerAngles = SCNVector3Make(newAngleX, newAngleY, 0);
+//单指 翻转、旋转，方式一
+- (void)rotate:(UIPanGestureRecognizer *)pan geometryNode:(SCNNode *)geometryNode{
 
-        CGPoint translation = [pan translationInView:pan.view];
-        CGFloat x = (CGFloat)(translation.x);
-        CGFloat y = (CGFloat)(-translation.y);
+    CGPoint translation = [pan translationInView:pan.view];
+    CGFloat newAngleX = (CGFloat)(translation.y)*(CGFloat)(M_PI)/180.0;
+    newAngleX += self.currentAngleX;
+    CGFloat newAngleY = (CGFloat)(translation.x)*(CGFloat)(M_PI)/180.0;
+    newAngleY += self.currentAngleY;
+    geometryNode.eulerAngles = SCNVector3Make(newAngleX, newAngleY, 0);
 
-        CGFloat anglePan = sqrt(pow(x,2)+pow(y,2))*(CGFloat)(M_PI)/180.0;
-        SCNVector4 rotationVector = SCNVector4Make(-y, x, 0, anglePan);
-//        rotationVector.x = -y;
-//        rotationVector.y = x;
-//        rotationVector.z = 0;
-//        rotationVector.w = anglePan;
-        geometryNode.rotation = rotationVector;
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        self.currentAngleX = newAngleX;
+        self.currentAngleY = newAngleY;
+    }
+}
 
-        if (pan.state == UIGestureRecognizerStateEnded) {
-//            self.currentAngleX = newAngleX;
-//            self.currentAngleY = newAngleY;
+//单指 翻转、旋转，方式二
+- (void)rotate2:(UIPanGestureRecognizer *)pan geometryNode:(SCNNode *)geometryNode{
 
-            SCNMatrix4 currentPivot = geometryNode.pivot;
-            SCNMatrix4 changePivot = SCNMatrix4Invert(geometryNode.transform);
-            geometryNode.pivot = SCNMatrix4Mult(changePivot, currentPivot);
-            geometryNode.transform = SCNMatrix4Identity;
-        }
+    CGPoint translation = [pan translationInView:pan.view];
+    CGFloat x = (CGFloat)(translation.x);
+    CGFloat y = (CGFloat)(-translation.y);
+
+    CGFloat anglePan = sqrt(pow(x,2) + pow(y,2)) * (CGFloat)(M_PI)/180.0;
+    SCNVector4 rotationVector = SCNVector4Make(-y, x, 0, anglePan);
+    geometryNode.rotation = rotationVector;
+
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        SCNMatrix4 currentPivot = geometryNode.pivot;
+        SCNMatrix4 changePivot = SCNMatrix4Invert(geometryNode.transform);
+        geometryNode.pivot = SCNMatrix4Mult(changePivot, currentPivot);
+        geometryNode.transform = SCNMatrix4Identity;
     }
 }
 
